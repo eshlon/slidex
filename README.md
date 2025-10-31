@@ -88,8 +88,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [shadcn/ui](https://ui.shadcn.com/)
 - All the amazing open-source libraries we use!
 
----
-
-<p align="center">
-  Made with ❤️ by the Slidex Team
-</p>
