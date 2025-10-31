@@ -1,0 +1,32 @@
+FROM python:3.12.3-slim
+
+# Install required system dependencies (Rust, build tools, LibreOffice, etc.)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    gcc \
+    rustc \
+    libreoffice \
+    curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY slide_api.py .
+COPY .env .
+
+# Expose port
+EXPOSE 8000
+
+# Command to run the application
+CMD ["uvicorn", "slide_api:app", "--host", "0.0.0.0", "--port", "8000"]
