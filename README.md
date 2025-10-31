@@ -4,6 +4,10 @@
 
 Welcome to **Slidex**, an open-source, AI-powered presentation generator! Slidex is a Next.js application that leverages the power of AI to create stunning presentations in minutes. It features a secure authentication system, a credit-based usage model, and detailed presentation history tracking.
 
+<video width="320" height="240" controls>
+  <source src="slidex_demo.mp4" type="video/mp4">
+</video>
+
 ## 🌟 Key Features
 
 - **🤖 AI-Powered Content Generation**: Create compelling presentation content from a simple prompt.
